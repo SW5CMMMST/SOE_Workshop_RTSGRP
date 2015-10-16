@@ -1,0 +1,31 @@
+% In your .tex file
+% !TEX program = latex
+%  A simple AAU report template.
+%  2014-09-13 v. 1.1.0
+%  Copyright 2010-2014 by Jesper Kjær Nielsen <jkn@es.aau.dk>
+%
+%  This is free software: you can redistribute it and/or modify
+%  it under the terms of the GNU General Public License as published by
+%  the Free Software Foundation, either version 3 of the License, or
+%  (at your option) any later version.
+%
+%  This is distributed in the hope that it will be useful,
+		%  but WITHOUT ANY WARRANTY; without even the implied warranty of
+%  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%  GNU General Public License for more details.
+%
+%  You can find the GNU General Public License at <http://www.gnu.org/licenses/>.
+%
+\input{setup/preamble.tex}% package inclusion and set up of the document
+\input{setup/hyphenations.tex}%
+\input{setup/macros.tex}% my new macros
+
+\begin{document}
+\input{FirstWorkshop/briefprojectdescription.tex}
+\input{FirstWorkshop/developmentprocess.tex}
+\input{FirstWorkshop/implementationplan.tex}
+
+\label{Glossaries}
+\bibliography{bib/mybib}
+\label{bib:mybiblio}
+\end{document}

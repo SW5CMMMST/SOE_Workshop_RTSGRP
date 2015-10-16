@@ -1,0 +1,642 @@
+%  A simple AAU report template.
+%  2014-09-13 v. 1.1.0
+%  Copyright 2010-2014 by Jesper Kjær Nielsen <jkn@es.aau.dk>
+%
+%  This is free software: you can redistribute it and/or modify
+%  it under the terms of the GNU General Public License as published by
+%  the Free Software Foundation, either version 3 of the License, or
+%  (at your option) any later version.
+%
+%  This is distributed in the hope that it will be useful,
+%  but WITHOUT ANY WARRANTY; without even the implied warranty of
+%  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%  GNU General Public License for more details.
+%
+%  You can find the GNU General Public License at <http://www.gnu.org/licenses/>.
+%
+\documentclass[11pt,twoside,a4paper,openright,final]{memoir}
+\usepackage{etex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% COMMAND DEACTIVATION %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\let\added\undefined
+\let\deleted\undefined
+
+
+%%%%%%%%%%%%%%
+%% PACKAGES %%
+%%%%%%%%%%%%%%
+
+
+%%% Initial things %%%
+% Fix various issues with LaTeX2e
+\usepackage{fixltx2e}
+% Font package
+\usepackage{fourier}
+% Index
+\usepackage{makeidx}
+\makeindex
+
+
+%%% Translations and character encodings %%%
+% Enable use of several characters, including æ, ø and å
+\usepackage[utf8]{inputenc}
+%  language
+\usepackage[english]{babel}
+% Use PostScript fonts instead of bitmap ones. Also does other stuff.
+\usepackage[T1]{fontenc}
+% Various LaTeX symbols
+\usepackage{latexsym}
+% Wider selection of colours
+\usepackage[pdftex,dvipsnames,table]{xcolor}  % Coloured text etc.% Improved element justification
+\usepackage{ragged2e}
+% Font improvements
+\usepackage{fix-cm}
+% Enables inclusion of PDF files
+\usepackage{pdfpages}
+% Enables various forms of lines, like double-underlining (\uuline{})
+\usepackage[normalem,normalbf]{ulem}
+% Sets the tolerance for distance between words, determining when to hyphenate.
+\pretolerance=2500
+
+
+%%% Figures and tables (Floats) %%%
+% Ensures that floats won't appear -before- the place where they're added
+\usepackage{flafter}
+% Enable multi-rows and -columns
+\usepackage{multirow}
+\usepackage{multicol}
+% Double, horizontal lines
+\usepackage{hhline}
+% Enables coloured tables
+\usepackage{colortbl}
+% Gives improved control over placement of floats
+% \begin{figure}[!h] % Won't be floating
+\usepackage{here}
+% Wrap text around figures
+\usepackage{wrapfig}
+% Wrap text around tables
+\usepackage{floatflt}
+% Enables the \FloatBarrier command
+\usepackage{placeins}
+% Rotation of figures
+\usepackage{rotating}
+% Framed boxes
+\usepackage{framed}
+% Booktabs - Fancy tables
+\usepackage{booktabs}
+% Enables inclusion of PDF documents of version 1.6+
+%\pdfoptionpdfminorversion=6
+
+
+%%% Mathematic formulas %%%
+% AMS math
+%\usepackage{amsmath}
+%\usepackage{amssymb}
+% Extra fonts (for math, I think)
+\usepackage{stmaryrd}
+% Access text symbols
+\usepackage{textcomp}
+% Extend AMS
+%\usepackage{mathtools}
+%\usepackage{cancel}
+% Use theorems in your document
+% The ntheorem package is also used for the example environment
+% When using thmmarks, amsmath must be an option as well. Otherwise \eqref doesn't work anymore.
+%\usepackage[framed,amsmath,thmmarks]{ntheorem}
+% Pretty fractions, just because
+%\usepackage{nicefrac}
+
+
+%%% Graphics %%%
+% Various image-commands
+\usepackage{eso-pic}
+% Use JPEG and PNG images
+\usepackage{array,graphicx}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\graphicspath{{./images/}}
+%Wrapping Images
+\usepackage{wrapfig}
+
+
+%%% Text stuff %%%
+% Filler text
+%\usepackage{lipsum}
+% Page counting
+%\usepackage{totpages}
+% Acronyms
+%\usepackage{acronym}
+%avoid widows
+%\widowpenalty10000
+
+
+%%% Source Code Stuff %%%
+% Adds \lstinline!code there!, where !! are delimeters not used in the code
+% Adds the environment: lstlisting
+% Adds command \lstinputlisting[options]{filename.ext}
+% More info in manual.
+%\usepackage{listings}
+%\lstloadlanguages{[Sharp]C,XML,SQL}
+%\lstset{numbers=left,
+%        numberstyle=\tiny,
+%        stepnumber=2,
+%        numbersep=5pt,
+%        frame=tb,
+%        inputencoding=utf8,
+%        tabsize=2,
+%        extendedchars=true,
+%        language=[Sharp]C}
+
+
+
+\usepackage{color}
+\definecolor{bluekeywords}{rgb}{0.13,0.13,1}
+\definecolor{greencomments}{rgb}{0,0.5,0}
+\definecolor{redstrings}{rgb}{0.9,0,0}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\usepackage{courier}
+
+\usepackage{listings}
+
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=single,                    % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=java,                 % the language of the code
+  otherkeywords={*,...,public, int16, int64, float64, float16, Void, Variable, Scope, String, foreach, ValueType},            % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,                       % sets default tabsize to 2 spaces
+  title=\lstname,                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+    literate={ø}{{\o}}1
+         {æ}{{\ae}}1
+         {å}{{\aa}}1
+         {Ø}{{\O}}1
+         {Æ}{{\AE}}1
+         {Å}{{\AA}}1
+         {§}{{\S}}1
+}
+
+\lstdefinestyle{java}{
+  belowcaptionskip=1\baselineskip,
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                % sets automatic line breaking
+  xleftmargin=\parindent,
+  language=Java,
+  tabsize=4,
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\Tiny\color{mygray}, % the style that is used for the line-numbers
+  showstringspaces=false,
+  basicstyle=\footnotesize\ttfamily,
+  keywordstyle=\bfseries\color[rgb]{.133,.545,.133},
+  commentstyle=\itshape\color{blue},
+  stringstyle=\color{mauve},
+  directivestyle=\bfseries\color{purple},
+  frame=single],
+  resetmargins=true,
+  morecomment=[s]{/*}{*/},
+  morekeywords={public, int16, int64, float64, float16, Void, Variable, Scope, String, foreach},
+  sensitive=true
+}
+
+
+\lstdefinestyle{make}{tabsize=4}
+
+%%% References, bibtex and URLs %%%
+% Post URLs. Allows breaking at hyphens to help avoid long links.
+\usepackage[hyphens]{url}
+% Better cross references
+\usepackage[danish]{varioref}
+% Enable natbib citation styles
+\usepackage[numbers]{natbib}
+% Define a new 'leo' style for URL package, that will use a smaller font
+\makeatletter
+\def\url@leostyle{%
+  \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\ttfamily}}
+}
+\makeatother
+% And of course, use this new style
+\urlstyle{leo}
+
+
+
+
+%%% Floats %%%
+% Not entirely sure why I need this yet
+\let\newfloat\relax
+\usepackage{float}
+% Enables usage of \subcaption, \subtop and \subbottom
+\newsubfloat{figure}
+
+
+%%% Todo Stuff %%%
+% Insert needed corrections with \fixme{..}, which will cause an error during compile, if any are present once 'draft'
+% is replaced with 'final'
+\usepackage[footnote,english,silent,nomargin]{fixme}
+\fxsetup{layout={footnote,marginclue,index},innerlayout={inline,index}}
+
+
+%%% Changes Markup %%%
+% Markup changes of varying types.
+% Adds the commands:
+%  - \added[id=(author id), remark={remark text}]{new text}
+%  - \deleted[id=(author id), remark={remark text}]{old text}
+%  - \replaced[id=(author id), remark={remark text}]{new text}{old text}
+\usepackage[xcolor,authormarkup=footnote]{changes}
+% Adds the commands:
+%  - \cbstart
+%  - \cbend
+%  - \cbdelete
+%  - Environment: changebar
+\usepackage[outerbars,xcolor]{changebar}
+\cbcolor{red}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% DOCUMENT SETTINGS %%
+%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% Margins %%%
+% \setlrmarginsandblock{binding}{edge}{ratio}
+\setlrmarginsandblock{2.0cm}{2.0cm}{*}
+% \setulmarginsandblock{top}{bottom}{ratio}
+\setulmarginsandblock{2.0cm}{2.0cm}{*}
+% Performs various calculations and makes several non-Memoir things work with the Memoir class
+\checkandfixthelayout 
+% Correct todonotes placement
+\reversemarginpar
+
+
+%%% Paragraph formatting %%%
+% Size of paragraph indentation
+\setlength{\parindent}{0mm}
+% Distance between paragraphs (double enter)
+\setlength{\parskip}{3mm}
+% Line distance
+\linespread{1,1}
+
+
+%%% Bibliography %%%
+% Defines parameters for the bibliography, such as the parenthesis and separators
+%%%% OLD STYLE!
+%\bibpunct{[}{]}{,}{a}{}{;}
+% Bibliography style
+%%%% OLD STYLE!
+%\bibliographystyle{bibtex/harvard}
+%\bibliographystyle{plainnat}
+\bibliographystyle{unsrt}
+
+
+%%% Table of contents %%%
+% Depth of numbered headlines
+\setsecnumdepth{subsubsection}
+% Changing the document class' limit for number-depth
+\maxsecnumdepth{subsection}
+% Define the depth included in the table of contents
+\settocdepth{section}
+% Use letters instead of Roman numerals in TOC
+\renewcommand{\thepart}{\Alph{part}}
+
+
+%%% Text stuff %%%
+% Removes distance between items in itemize
+%\let\olditemize=\itemize
+%\def\itemize{\olditemize\setlength{\itemsep}{-1ex}}
+%% Removes distance between items in enumerate
+%\let\oldenumerate=\enumerate
+%\def\enumerate{\oldenumerate\setlength{\itemsep}{-1ex}}
+\usepackage{enumitem}
+
+
+%%% Changes (Language strings) %%%
+\addto\captionsdanish{
+  \def\listofchangesname{Ændringer i dokumentet}
+  \def\summaryofchangesname{Ændringer}
+  \def\changesaddname{Tilføjet}
+  \def\changesdeletename{Slettet}
+  \def\changesreplacename{Erstattet}
+  \def\changesauthorname{Skribent}
+  \def\changesanonymousname{anonym}
+  \def\changesnoloc{Listen af ændringer tilgængelig efter næste \LaTeX\ kørsel.}
+  \def\changesnosoc{Opsummering af ændringer tilgængelig efter næste \LaTeX\ kørsel.}
+}
+
+
+%%% Visual references %%%
+% Enables clickable hyperlinks
+
+%%% Add hidelinks to remove boxes around links
+
+\usepackage[colorlinks,backref=page,hidelinks]{hyperref}
+% General setup of hyperlinks package
+\hypersetup{
+    breaklinks = true,
+    colorlinks = false,
+    linkcolor = black,
+    anchorcolor = black,
+    citecolor = black
+}
+
+
+%%% Colour definitions %%%
+% Defines: gray
+\definecolor{gray}{gray}{0.80}
+% Defines: numbercolor
+\definecolor{numbercolor}{gray}{0.7}
+% Defines: shadecolor
+\definecolor{shadecolor}{RGB}{33,26,82}
+% Defines: aaublue
+\definecolor{aaublue}{RGB}{33,26,82}
+
+
+%%% Figure and table texts setup %%%
+% Font definition for the 'Figure' or 'Table' displays.
+\captionnamefont{\small\bfseries\itshape}
+% Font definition for the numbering
+\captiontitlefont{\small}
+% Delimiter between number and figure text
+\captiondelim{. }
+% Left justify multi-line figure texts below one another
+\hangcaption
+% Width of figure text
+\captionwidth{\linewidth}
+% Distance below figure text
+\setlength{\belowcaptionskip}{10pt}
+% Fix space between figure number and name
+\setlength{\cftfigurenumwidth}{14mm}
+
+
+%%% Page header and footer %%%
+% Define width of header and footer
+\setlength{\headwidth}{\textwidth}
+% Create pagestyle for pages with and without a new chapter
+\makepagestyle{reportPlain}
+\makepagestyle{reportChapter}
+% Pagestyle for chapter pages (Only a footer, of course)
+\makefootrule{reportChapter}{\headwidth}{\normalrulethickness}{\footruleskip}
+\makeevenfoot{reportChapter}{\thepage}{}{}
+\makeoddfoot{reportChapter}{}{}{\thepage}
+% Pagestyle for regular pages
+\makerunningwidth{reportPlain}{\headwidth}
+\makeheadposition{reportPlain}{flushright}{flushleft}{flushright}{flushleft}
+\makeevenhead{reportPlain}{\leftmark}{}{}
+\makeoddhead{reportPlain}{}{}{\rightmark}
+\makeevenfoot{reportPlain}{\thepage}{}{}
+\makeoddfoot{reportPlain}{}{}{\thepage}
+\makeheadrule{reportPlain}{\headwidth}{\normalrulethickness}
+\makefootrule{reportPlain}{\headwidth}{\normalrulethickness}{\footruleskip}
+% Use pagestyles
+\pagestyle{reportPlain}
+\aliaspagestyle{chapter}{reportChapter}
+\aliaspagestyle{part}{reportChapter}
+\aliaspagestyle{title}{empty}
+% Do not stretch pages
+\raggedbottom
+
+
+%%% Naming %%%
+% Define various names for captions and such
+%\addto\captionsdanish{
+ % \renewcommand\appendixname{Bilag}
+%  \renewcommand\contentsname{Indholdsfortegnelse} 
+%  \renewcommand\appendixpagename{Bilag}
+%  \renewcommand\cftchaptername{\chaptername~}
+%  \renewcommand\cftappendixname{\appendixname~}
+%  \renewcommand\appendixtocname{Bilag}
+%}
+
+
+%%% Appendix setup %%%
+% Appendix setup. Might need some settings here
+\usepackage{appendix}
+
+
+%%% Chapter look and feel %%%
+% Define style: jenor
+\newif\ifchapternonum
+\makechapterstyle{jenor}{
+  \renewcommand\printchaptername{}
+  \renewcommand\printchapternum{}
+  \renewcommand\printchapternonum{\chapternonumtrue}
+  \renewcommand\chaptitlefont{\fontfamily{pbk}\fontseries{db}\fontshape{n}\fontsize{25}{35}\selectfont\raggedleft}
+  \renewcommand\chapnumfont{\fontfamily{pbk}\fontseries{m}\fontshape{n}\fontsize{1in}{0in}\selectfont\color{numbercolor}}
+  \renewcommand\printchaptertitle[1]{%
+    \noindent
+    \ifchapternonum
+    \begin{tabularx}{\textwidth}{X}
+    {\let\\\newline\chaptitlefont ##1\par}
+    \end{tabularx}
+    \par\vskip-2.5mm\hrule
+    \else
+    \begin{tabularx}{\textwidth}{Xl}
+    {\parbox[b]{\linewidth}{\chaptitlefont ##1}} & \raisebox{-15pt}{\chapnumfont \thechapter}
+    \end{tabularx}
+    \par\vskip2mm\hrule
+    \fi
+  }
+}
+% Use style: jenor
+%\chapterstyle{jenor}
+\usepackage{titlesec, blindtext}
+\definecolor{gray75}{gray}{0.75}
+\newcommand{\hsp}{\hspace{20pt}}
+\titleformat{\chapter}[hang]{\Huge\bfseries\vspace{-40pt}}{\thechapter\vspace{-20pt}\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries\vspace{-20pt}}
+
+%%% Misc stuff %%%
+% Use regular numbers for pages
+%\pagenumbering{arabic}
+% Word and letter counts
+\newcommand{\wordcount}{\input{preamble/sums/wordcount.sum}}
+\newcommand{\charcount}{\input{preamble/sums/charcount.sum}}
+\newcommand{\lettercount}{\charcount}
+\newif\ifcounts
+% Italicized quote-environment
+\newenvironment{italicquote}{\begin{quote}\itshape}{\end{quote}}
+% Acronyms in list or not (true if in list)
+\newif\ifAcroList
+\AcroListfalse
+
+
+%%% Left-aligning bibliography %%%
+%\renewcommand*{\bibfont}{\raggedright}
+
+
+%%%% these patches ensure that the backrefs point to the actual occurrences of the citations in the text, not just the page or section in which they appeared
+%%%% http://tex.stackexchange.com/questions/54541/precise-back-reference-target-with-hyperref-and-backref
+%%%% BEGIN BACKREF DIRECT PATCH, apply these AFTER loading hyperref package with appropriate backref option
+% The following options are provided for the patch, currently with a poor interface!
+% * If there are multiple cites on the same (page|section) (depending on backref mode),
+%   should we show only the first one or should we show them all?
+\newif\ifbackrefshowonlyfirst
+\backrefshowonlyfirstfalse
+%\backrefshowonlyfirsttrue
+%%%% end of options
+%
+% hyperref is essential for this patch to make any sense, so it is not unreasonable to request it be loaded before applying the patch
+\makeatletter
+% 1. insert a phantomsection before every cite, so hyperref has something to target
+%    * in case natbib is loaded. hyperref provides an appropriate hook so this should be safe, and we don't even need to check if natbib is loaded!
+\let\BR@direct@old@hyper@natlinkstart\hyper@natlinkstart
+\renewcommand*{\hyper@natlinkstart}{\phantomsection\BR@direct@old@hyper@natlinkstart}% note that the anchor will appear after any brackets at the start of the citation, but that's not really a big issue?
+%    * if natbib isn't used, backref lets \@citex to \BR@citex during \AtBeginDocument
+%      so just patch \BR@citex
+\let\BR@direct@oldBR@citex\BR@citex
+\renewcommand*{\BR@citex}{\phantomsection\BR@direct@oldBR@citex}%
+
+% 2. if using page numbers, show the page number but still hyperlink to the phantomsection instead of just the page!
+\long\def\hyper@page@BR@direct@ref#1#2#3{\textit{\hyperlink{#3}{Page #1}}}
+
+% check which package option the user loaded (pages (hyperpageref) or sections (hyperref)?)
+\ifx\backrefxxx\hyper@page@backref
+    % they wanted pages! make sure they get our re-definition
+    \let\backrefxxx\hyper@page@BR@direct@ref
+    \ifbackrefshowonlyfirst
+        %\let\backrefxxxdupe\hyper@page@backref% test only the page number
+        \newcommand*{\backrefxxxdupe}[3]{#1}% test only the page number
+    \fi
+\else
+    \ifbackrefshowonlyfirst
+        \newcommand*{\backrefxxxdupe}[3]{#2}% test only the section name
+    \fi
+\fi
+
+% 3. now make sure that even if there is no numbered section, the hyperref's still work instead of going to the start of the document!
+\RequirePackage{etoolbox}
+\patchcmd{\Hy@backout}{Doc-Start}{\@currentHref}{}{\errmessage{I can't seem to patch backref}}
+\makeatother
+%%%% END BACKREF PATCHES
+
+
+% Enable figures like checkmarks
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Flowchart
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning, matrix, automata, positioning}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage{bera}% optional: just to have a nice mono-spaced font
+
+\newcommand*\rot{\rotatebox{90}}
+
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{background},
+    literate=
+     *{:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
+
+
+%% SOME MACROS HYPE
+
+\newcommand{\class}[1] {\texttt{#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Misc
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Add bibliography and index to the table of
+% contents
+% Add the command \pageref{LastPage} which refers to the
+% page number of the last page
+%\usepackage[
+% disable, %turn off todonotes
+%colorinlistoftodos, %enable a coloured square in the list of todos
+%textwidth=\marginparwidth, %set the width of the todonotes
+%textsize=scriptsize, %size of the text in the todonotes
+%prependcaption
+%]{todonotes}
+%\usepackage{xargs}                      % Use more than one optional parameter in a new commands
+
+\usepackage{tocbibind}
+
+\usepackage[english]{cleveref}
+\crefname{exa}{eksempel}{eksempler}
+\newcommand{\myref}[1]{\Cref{#1}}
+\newcommand{\Myref}[1]{\Cref{#1}}
+\newcommand{\lowercaseref}[1]{\cref{#1}}
+
+\def\sectionautorefname{Section}
+
+% GLOSARIEIASI
+%\usepackage[acronym]{glossaries}
+%\usepackage{xparse}
+
+%\makeglossaries
+%\input{formal/glossaries.tex}
+
+
+\usepackage{xargs}                      % Use more than one optional parameter in a new commands
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny,disable]{todonotes}
+
+%\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+\newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+\newcommandx{\info}[2][1=]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
+\newcommandx{\improvement}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
+\newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
+
+
+
+\usepackage{tikz}
+
+\usetikzlibrary{shapes.geometric, arrows}
+
+\tikzstyle{lille} = [rectangle, minimum width=2cm, minimum height=1cm,text centered, draw=black]
+\tikzstyle{main} = [rectangle, minimum width=2cm, minimum height=2cm,text centered, draw=black]
+\tikzstyle{hoj} = [rectangle, minimum width=1cm, minimum height=2cm,text centered, draw=black]
+\tikzstyle{cloud} = [draw, ellipse,fill=yellow!20, node distance=0.7cm, minimum height=2em]
+\tikzstyle{invi} = [draw, ellipse, node distance=3cm, minimum height=2em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\tikzstyle{blockz} = [rectangle, minimum width=4cm, minimum height=1cm,text centered, draw=black, fill=blue!30]
+
+
+
+
+\usepackage{pdflscape}
