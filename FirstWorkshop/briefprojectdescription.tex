@@ -1,11 +1,11 @@
 \chapter{Brief Project Description}
 Our project concernes developing a peer-to-peer network between Arduino-like devices over a single radio frequency, such that any device can communicate to any other device in the network, even if they are not in reach of eachother.
 The problems involved are distributing time for each device to talk in, as if they would transmit at the same time the other devices would be unable to recive the messages.
+
 Any transmission only has a 97±2 \% to be recived by any other device in the network.
 This must be compensated in software, using ACKs etc.
- 
 A real-time worst case analysis must also be made, this will be propability based, i.e. we will give a 95 \% garentee that a given message will reach the target within a time period.
- 
+
 The result will be a framework within which an application can be developed.
 Example uses are fire alarm system, home automation etc.
  
