@@ -20,10 +20,27 @@
 \input{setup/hyphenations.tex}%
 \input{setup/macros.tex}% my new macros
 
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+\makeatother
+
+%\title{SOE Workshop}
+\title{\Huge\bfseries{SOE Workshop}}
+
+
+
+\author{Søren Frandsen (sfrand12), Mathias Sass Michno (mmichn13) \& Troels Beck Krøgh (tkragh13)}
+
 \begin{document}
+{\let\newpage\relax\maketitle}
+
+\begingroup
+\let\clearpage\relax
 \input{FirstWorkshop/briefprojectdescription.tex}
 \input{FirstWorkshop/developmentprocess.tex}
 \input{FirstWorkshop/implementationplan.tex}
+\endgroup
 
 \label{Glossaries}
 \bibliography{bib/mybib}
