@@ -308,8 +308,8 @@
 % Bibliography style
 %%%% OLD STYLE!
 %\bibliographystyle{bibtex/harvard}
-%\bibliographystyle{plainnat}
-\bibliographystyle{unsrt}
+\bibliographystyle{plain}
+%\bibliographystyle{unsrt}
 
 
 %%% Table of contents %%%
@@ -400,7 +400,9 @@
 % Pagestyle for chapter pages (Only a footer, of course)
 \makefootrule{reportChapter}{\headwidth}{\normalrulethickness}{\footruleskip}
 \makeevenfoot{reportChapter}{\thepage}{}{}
-\makeoddfoot{reportChapter}{}{}{\thepage}
+\makeoddfoot{reportChapter}{\thepage}{}{}
+
+%\makeoddfoot{reportChapter}{}{}{\thepage}
 % Pagestyle for regular pages
 \makerunningwidth{reportPlain}{\headwidth}
 \makeheadposition{reportPlain}{flushright}{flushleft}{flushright}{flushleft}

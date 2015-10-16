@@ -25,6 +25,7 @@
 \patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
 \makeatother
 
+\patchcmd{\thebibliography}{\chapter*}{\section*}{}{}
 %\title{SOE Workshop}
 \title{\Huge\bfseries{SOE Workshop}}
 
@@ -35,14 +36,16 @@
 \begin{document}
 {\let\newpage\relax\maketitle}
 
+\vspace{-20pt}
 \begingroup
 \let\clearpage\relax
+
+\bibliography{bib/mybib}
+
+
 \input{FirstWorkshop/briefprojectdescription.tex}
 \input{FirstWorkshop/developmentprocess.tex}
 \input{FirstWorkshop/implementationplan.tex}
 \endgroup
 
-\label{Glossaries}
-\bibliography{bib/mybib}
-\label{bib:mybiblio}
 \end{document}
