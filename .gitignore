@@ -55,3 +55,7 @@ master.thm
 *.loc
 *.brf
 *.tdo
+*.xml
+*.bib
+*.fls
+main.pdf
