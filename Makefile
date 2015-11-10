@@ -11,7 +11,7 @@ OTHER = *~ *.aux *.dvi *.toc *.bbl *.blg *.gz *.out *.thm *.ps *.idx *.ilg *.ind
 
 pdflatex: master.tex
 	pdflatex  --shell-escape --synctex=1 master.tex
-	makeglossaries master
+#	makeglossaries master
 	bibtex master
 	pdflatex --shell-escape --synctex=1 master.tex
 	pdflatex --shell-escape --synctex=1 master.tex
