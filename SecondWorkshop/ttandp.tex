@@ -1,0 +1,55 @@
+%Pair Programming
+%Refactoring
+%Versionsstyring
+%Peer review (Inspection)
+
+\chapter{Tools, Techniques and Practices} % (fold)
+\label{cha:tools_techniques_and_practices}
+This chapter will describe, and present a rationale for the different tools, techniques and practices, which have been chosen.
+Lastly the implementation of these will be presented.
+The chosen tools, techniques and practices are: \textbf{Pair Programming}, \textbf{Refactoring}, \textbf{Version control} and \textbf{Peer Review (Inspection)}.
+
+\subsection*{Pair Programming} % (fold)
+\label{sub:pair_programming}
+\begin{description}
+    \item[What?]\hfill\\
+    When coding two programmers may work together on the same machine/computer.
+The process involves two distinct roles; One programmer writes the code and the other reviews each line of code, as it is written. 
+However the two programmers are encouraged to switch roles once in a while, during the pair programming.
+    
+    \item[Why?]\hfill\\ 
+    Often when programming, especially if the programmers lack expertise in the field in question, pair programming can be utilised to overcome obstacles, since the second developer may have some profound idea or approach to a given problem.
+    This is certainly true when it comes to a project group, where all members not only have different levels of experience, but almost everyone are working in a completely new field e.g. this semesters embedded systems.
+    Moreover it is expected that every member of the group writes code, and considering the relatively small project where a completely parallel workflow is impossible because of dependencies, pair programming is the ideal solution to utilise all available labor.
+    Another rationale for using pair programming is the effect is has on certain oncoming bugs.
+    When a bug is encountered while writing the code it is often helpful to the programmer to explain what the code is supposed to do out load.
+    This is also known as \emph{Rubber duck debugging} where a programmer explains the given code to a rubber duck, and in the process of doing this realises what may be causing the bug (for details see \cite{wiki:Rubber_duck debugging}).
+    However then pair programming this rubber duck is replaced by another developer, which often will speed up the debugging.
+    
+    \item[How?]\hfill\\
+    
+\end{description}
+% subsection pair_programming (end)
+\subsection*{Refactoring} % (fold)
+\label{sub:refactoring}
+\begin{description}
+    \item[What?]\hfill\\
+    When existing code is restructured and/or changed without changing the way it behaves to the user (externally), it is called refactoring.
+This technique is generally used to gain readability and maintainability in a codebase.
+A large part of the refactoring process can be done by almost any IDE or text editor, and consists of formatting the code to be more readable; furthermore some tools can do extensive refactoring i.e. rewriting methods and functions or catching dormant bugs.
+
+    \item[Why?]\hfill\\ 
+    Refactoring is used in our project because the benefits of having more readable and maintainable code, far surpass those of spending the extra time to refactor code.
+    This readability an maintainability is especially important when working on project which involve other programmers. 
+    One programmer may do things a certain way that is not easily understood by others, and by then refactoring such code during a review process or pair programming the rest of the development team can easily pick up where that one programmer left off.
+    Context switching for a programmer, i.e. reading a completely new (or long forgotten) piece of code, is very slow especially when readability of the code is low; this problem can be made less significant with proper refactoring. 
+    
+    \item[How?]\hfill\\
+    To implement refactoring in the work process of our project, the first step is to ensure that all programmers agree on how to do it.
+    Refactoring has zero benefits if each programmer has a different approach and no general consensus has been made about the output of refactoring.
+    After that it is important that every review process and pair programming session has extra focus on refactoring, since fresh eyes often can see certain pitfalls the original programmer may not be aware of.
+    Furthermore every programmer should be encouraged to use any refactoring or formatting provided by external tools, as long as said tools does what is agreed upon in the group. 
+    Too maintain a high level of refactoring is should be considered as a key concept during development, and no code should be submitted to the project without a thorough refactoring.  
+\end{description}                       
+% subsection refactoring (end)
+% chapter tools_techniques_and_practices (end)
