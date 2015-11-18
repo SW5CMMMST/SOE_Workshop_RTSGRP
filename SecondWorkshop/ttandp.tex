@@ -9,8 +9,8 @@ This chapter will describe, and present a rationale for the different tools, tec
 Lastly the implementation of these will be presented.
 The chosen tools, techniques and practices are: \textbf{Pair Programming}, \textbf{Refactoring}, \textbf{Version control} and \textbf{Peer Review (Inspection)}.
 
-\subsection*{Pair Programming} % (fold)
-\label{sub:pair_programming}
+\section*{Pair Programming} % (fold)
+\label{sec:pair_programming}
 \begin{description}
     \item[What?]\hfill\\
     When coding two programmers may work together on the same machine/computer.
@@ -27,11 +27,17 @@ However the two programmers are encouraged to switch roles once in a while, duri
     However then pair programming this rubber duck is replaced by another developer, which often will speed up the debugging.
     
     \item[How?]\hfill\\
-    
+    As a concept pair programming is fairly easy to implement in a project group.
+    It is mainly done by assigning programming tasks to pairs of people instead of just one student.
+    The problem with pair programming comes when a given task is to be done at home.
+    Here it is very naive to expect that two group member will coordinate their time and place in order for the pair programming be utilised.
+    However certain elements of the pair programming may still be used with the consulting of another group member when an obstacle is facing the coder.
+    This is not an optimal solution and often the different programming tasks are plan so that they are doable when a pair programming setup can be performed.
+    Some members of the project group may not want to be part of a pair programming duo, however it is not only the coder that benefits from the process but also the observer can gain some knowledge, so one should always try to incorporate a partner into the process of writing code for the project. 
 \end{description}
-% subsection pair_programming (end)
-\subsection*{Refactoring} % (fold)
-\label{sub:refactoring}
+% section pair_programming (end)
+\section*{Refactoring} % (fold)
+\label{sec:refactoring}
 \begin{description}
     \item[What?]\hfill\\
     When existing code is restructured and/or changed without changing the way it behaves to the user (externally), it is called refactoring.
@@ -51,5 +57,5 @@ A large part of the refactoring process can be done by almost any IDE or text ed
     Furthermore every programmer should be encouraged to use any refactoring or formatting provided by external tools, as long as said tools does what is agreed upon in the group. 
     Too maintain a high level of refactoring is should be considered as a key concept during development, and no code should be submitted to the project without a thorough refactoring.  
 \end{description}                       
-% subsection refactoring (end)
+% section refactoring (end)
 % chapter tools_techniques_and_practices (end)
