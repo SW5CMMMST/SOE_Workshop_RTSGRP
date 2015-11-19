@@ -5,7 +5,7 @@
 
 \chapter{Tools, Techniques and Practices} % (fold)
 \label{cha:tools_techniques_and_practices}
-This chapter will describe, and present a rationale for the different tools, techniques and practices, which have been chosen.
+This chapter will describe, and present a rationale for the different tools, techniques and practices, which have been chosen to complement our agile development process.
 Lastly the implementation of these will be presented.
 The chosen tools, techniques and practices are: \textbf{Pair Programming}, \textbf{Refactoring}, \textbf{Version control} and \textbf{Peer Review (Inspection)}.
 
@@ -22,9 +22,9 @@ However the two programmers are encouraged to switch roles once in a while, duri
     This is certainly true when it comes to a project group, where all members not only have different levels of experience, but almost everyone are working in a completely new field e.g. this semesters embedded systems.
     Moreover it is expected that every member of the group writes code, and considering the relatively small project where a completely parallel workflow is impossible because of dependencies, pair programming is the ideal solution to utilise all available labor.
     Another rationale for using pair programming is the effect is has on certain oncoming bugs.
-    When a bug is encountered while writing the code it is often helpful to the programmer to explain what the code is supposed to do out load.
+    When a bug is encountered while writing the code it is often helpful to the programmer to explain what the code is supposed to do out loud.
     This is also known as \emph{Rubber duck debugging} where a programmer explains the given code to a rubber duck, and in the process of doing this realises what may be causing the bug.
-    However then pair programming this rubber duck is replaced by another developer, which often will speed up the debugging.
+    However when pair programming this rubber duck is replaced by another developer, which might speed up the debugging and increase the quality of the code.
     
     \item[How?]\hfill\\
     As a concept pair programming is fairly easy to implement in a project group.
@@ -32,8 +32,8 @@ However the two programmers are encouraged to switch roles once in a while, duri
     The problem with pair programming comes when a given task is to be done at home.
     Here it is very naive to expect that two group member will coordinate their time and place in order for the pair programming be utilised.
     However certain elements of the pair programming may still be used with the consulting of another group member when an obstacle is facing the coder.
-    This is not an optimal solution and often the different programming tasks are plan so that they are doable when a pair programming setup can be performed.
-    Some members of the project group may not want to be part of a pair programming duo, however it is not only the coder that benefits from the process but also the observer can gain some knowledge, so one should always try to incorporate a partner into the process of writing code for the project. 
+    This is not an optimal solution and often the different programming tasks are planned so that they are doable when a pair programming setup can be performed.
+    Some members of the project group may not want to be part of a pair programming duo, however it is not only the coder that benefits from the process but also the observer who can gain some knowledge, so one should always try to incorporate a partner into the process of writing code for the project. 
 \end{description}
 % section pair_programming (end)
 \section*{Refactoring} % (fold)
@@ -46,8 +46,8 @@ A large part of the refactoring process can be done by almost any IDE or text ed
 
     \item[Why?]\hfill\\ 
     Refactoring is used in our project because the benefits of having more readable and maintainable code, far surpass those of spending the extra time to refactor code.
-    This readability an maintainability is especially important when working on project which involve other programmers. 
-    One programmer may do things a certain way that is not easily understood by others, and by then refactoring such code during a review process or pair programming the rest of the development team can easily pick up where that one programmer left off.
+    This readability and maintainability is especially important when working on a project which involve other programmers. 
+    One programmer may do things a certain way that is not easily understood by others, and then by refactoring such code during a review process or pair programming the rest of the development team can easily pick up where that one programmer left off.
     Context switching for a programmer, i.e. reading a completely new (or long forgotten) piece of code, is very slow especially when readability of the code is low; this problem can be made less significant with proper refactoring. 
     
     \item[How?]\hfill\\
