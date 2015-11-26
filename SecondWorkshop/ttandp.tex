@@ -67,11 +67,11 @@ A large part of the refactoring process can be done by almost any IDE or text ed
     Git and Subversion (SVN) are among the most common tools for this, but in a sense a tool like Dropbox can be used for something similar, however it is inferior for source code.
     When developing, either source code or documentation in i.e. LaTeX, every collaborator has to have a copy of the code to develop on it. 
     Then this source code can be shared, in a way that allows several people to make changes to the same files and merging their changes again. 
+
     \item[Why?]\hfill\\ 
-    An alternative to using a VCS is to have a shared drive and ``locking'' files, i.e. disallow any other person to change the file one person is working on. 
-    Another alternative is to use something which works in real-time from person to person, such as ShareLaTeX or Google Drive. 
-    This however locks a person into an ecosystem which only has a single editor etc. 
-    Using a VCS allows each collaborator to setup their own environment (editor, compiler etc.) just as they want it. 
+    A VCS provides the project group with the ability to seamlessly write code or documentation interdependently of platform, editors, etc.
+    Having not to worry about making changes and merging it later, makes it much less of a burden to write concurrently. 
+
     \item[How?]\hfill\\
     In our project we use Git which is a distributed decentralized VCS. 
     Each collaborator has a copy of the code, and we have a centralized repository on Github. 
@@ -87,10 +87,12 @@ A large part of the refactoring process can be done by almost any IDE or text ed
     A peer review is done to secure the quality of content. 
     When a peer review takes place, then the author and one or more group members inspects the content in order to evaluate the quality and make corrections if needed. 
     The content to be reviewed can be of any type: Requirement documents, Source Code, Documentation, Tests, etc.
+
     \item[Why?]\hfill\\ 
     Peer review ensures that the quality of the content in the code-base, is of the wanted quality and doesn't differ from its specification. 
-    Finding errors earlier and correcting them is often an advantage as noting else will depend on it. 
+    Finding errors earlier and correcting them is often an advantage as nothing else will depend on it. 
     At the very least, the people in the peer review will have a better understanding of the project at hand.
+
     \item[How?]\hfill\\
     We use Scrum so the peer review is done when a story has been put in the review phase. 
     As mentioned above, all content in the master branch of our Git repository has been confirmed by at least two people, often three. 
