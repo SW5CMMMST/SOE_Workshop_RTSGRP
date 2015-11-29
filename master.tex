@@ -24,18 +24,22 @@
 \makeatletter
 \patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
 \makeatother
+\makeatletter
+\newcommand*{\toccontents}{\@starttoc{toc}}
+\makeatother
 
 \patchcmd{\thebibliography}{\chapter*}{\section*}{}{}
 
-%\title{\Huge\bfseries{SOE Workshop}}
-\title{SOE Workshop}
-
-
-\author{Søren Frandsen (sfrand12), Mathias Sass Michno (mmichn13) \& Troels Beck Krøgh (tkragh13)}
+\title{\HUGE\bfseries{SOE Workshop}}
+%\title{SOE Workshop}
+\author{\textit{Søren Frandsen (sfrand12), Mathias Sass Michno (mmichn13) \& Troels Beck Krøgh (tkragh13)}}
 
 \begin{document}
 {\let\newpage\relax\maketitle}
-
+\begin{center}
+\rule{0.7\textwidth}{1pt}
+\end{center}
+\toccontents
 \vspace{-20pt}
 \begingroup
 %\let\clearpage\relax
@@ -51,10 +55,9 @@
 \input{ThirdWorkshop/eval.tex}
 \input{ThirdWorkshop/Soeren.tex}
 \input{ThirdWorkshop/troels.tex}
-\appendix 
-\chapter{Appendix}
-\clearpage
-\input{ThirdWorkshop/table.tex}
+\begin{appendices} 
+\input{ThirdWorkshop/table.tex}    
+\end{appendices}
 \endgroup
 
 \end{document}

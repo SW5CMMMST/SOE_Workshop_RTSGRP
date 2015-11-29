@@ -331,7 +331,8 @@
 %% Removes distance between items in enumerate
 %\let\oldenumerate=\enumerate
 %\def\enumerate{\oldenumerate\setlength{\itemsep}{-1ex}}
-\usepackage{enumitem}
+\usepackage{enumitem} 
+\SetLabelAlign{parright}{\parbox[t]{\labelwidth}{\raggedleft#1}} 
 \usepackage{mdwlist}
 
 
@@ -438,7 +439,7 @@
 %%% Appendix setup %%%
 % Appendix setup. Might need some settings here
 \usepackage{appendix}
-
+\renewcommand\cftappendixname{\appendixname~}
 
 %%% Chapter look and feel %%%
 % Define style: jenor
