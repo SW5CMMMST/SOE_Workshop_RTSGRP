@@ -1,0 +1,96 @@
+%Pair Programming
+%Refactoring
+%Versionsstyring
+%Peer review (Inspection)
+
+\chapter{Tools, Techniques and Practices} % (fold)
+\label{cha:tools_techniques_and_practices}
+This chapter will describe, and present a rationale for the different tools, techniques and practices, which have been chosen to complement our agile development process.
+Lastly the implementation of these will be presented.
+The chosen tools, techniques and practices are: \textbf{Pair Programming}, \textbf{Refactoring}, \textbf{Version control} and \textbf{Peer Review (Inspection)}.
+
+\section*{Pair Programming} % (fold)
+\label{sec:pair_programming}
+\begin{description}
+    \item[What?]\hfill\\
+    When coding two programmers may work together on the same machine/computer.
+The process involves two distinct roles; One programmer writes the code and the other reviews each line of code, as it is written. 
+However the two programmers are encouraged to switch roles once in a while, during the pair programming.
+    
+    \item[Why?]\hfill\\ 
+    Often when programming, especially if the programmers lack expertise in the field in question, pair programming can be utilised to overcome obstacles, since the second developer may have some profound idea or approach to a given problem.
+    This is certainly true when it comes to a project group, where all members not only have different levels of experience, but almost everyone are working in a completely new field e.g. this semesters embedded systems.
+    Moreover it is expected that every member of the group writes code, and considering the relatively small project where a completely parallel workflow is impossible because of dependencies, pair programming is the ideal solution to utilise all available labor.
+    
+    \item[How?]\hfill\\
+    As a concept pair programming is fairly easy to implement in a project group.
+    It is mainly done by assigning programming tasks to pairs of people instead of just one student.
+    The problem with pair programming comes when a given task is to be done at home.
+    Here it is very naive to expect that two group member will coordinate their time and place in order for the pair programming be utilised.
+    However certain elements of the pair programming may still be used with the consulting of another group member when an obstacle is facing the coder.
+    This is not an optimal solution and often the different programming tasks are planned so that they are doable when a pair programming setup can be performed.
+\end{description}
+% section pair_programming (end)
+\section*{Refactoring} % (fold)
+\label{sec:refactoring}
+\begin{description}
+    \item[What?]\hfill\\
+    When existing code is restructured and/or changed without changing the way it behaves to the user (externally), it is called refactoring.
+This technique is generally used to gain readability and maintainability in a codebase.
+A large part of the refactoring process can be done by almost any IDE or text editor, and consists of formatting the code to be more readable; furthermore some tools can do extensive refactoring i.e. rewriting methods and functions or catching dormant bugs.
+
+    \item[Why?]\hfill\\ 
+    Refactoring is used in our project because the benefits of having more readable and maintainable code, far surpass those of spending the extra time to refactor code.
+    This readability and maintainability is especially important when working on a project which involve other programmers. 
+    One programmer may do things a certain way that is not easily understood by others, and then by refactoring such code during a review process or pair programming the rest of the development team can easily pick up where that one programmer left off.
+    Context switching for a programmer, i.e. reading a completely new (or long forgotten) piece of code, is very slow especially when readability of the code is low; this problem can be made less significant with proper refactoring. 
+    
+    \item[How?]\hfill\\
+    To implement refactoring in the work process of our project, the first step is to ensure that all programmers agree on how to do it.
+    Refactoring has zero benefits if each programmer has a different approach and no general consensus has been made about the output of refactoring.
+    After that it is important that every review process and pair programming session has extra focus on refactoring, since fresh eyes often can see certain pitfalls the original programmer may not be aware of.
+    Furthermore every programmer should be encouraged to use any refactoring or formatting provided by external tools, as long as said tools does what is agreed upon in the group. 
+    Too maintain a high level of refactoring is should be considered as a key concept during development, and no code should be submitted to the project without a thorough refactoring.  
+\end{description}                       
+% section refactoring (end)
+ 
+\section*{Version Control}
+\label{sec:versioncontrol}
+\begin{description}
+    \item[What?]\hfill\\
+    Version Control Systems (VCS) keeps track of changes across a code-base. 
+    Git and Subversion (SVN) are among the most common tools for this, but in a sense a tool like Dropbox can be used for something similar, however it is inferior for source code.
+    When developing, either source code or documentation in i.e. LaTeX, every collaborator has to have a copy of the code to develop on it. 
+    Then this source code can be shared, in a way that allows several people to make changes to the same files and merging their changes again. 
+
+    \item[Why?]\hfill\\ 
+    A VCS provides the project group with the ability to seamlessly write code or documentation interdependently of platform, editors, etc.
+    Having not to worry about making changes and merging it later, makes it much less of a burden to write concurrently. 
+
+    \item[How?]\hfill\\
+    In our project we use Git which is a distributed decentralized VCS. 
+    Each collaborator has a copy of the code, and we have a centralized repository on Github. 
+    When one wishes to make a change they make a branch of the current master, this means that they will take a snapshot of the current version, then make their changes to it.
+    When they are done doing what they desires, they make a request to have their new content merged into the master, here a Peer Review takes place. 
+    After corrections is done, the content is merged and the cycle can start over. 
+\end{description}
+
+\section*{Peer Review (Inspection)}
+\label{sec:peerreview}
+\begin{description}
+    \item[What?]\hfill\\
+    A peer review is done to secure the quality of content. 
+    When a peer review takes place, then the author and one or more group members inspects the content in order to evaluate the quality and make corrections if needed. 
+    The content to be reviewed can be of any type: Requirement documents, Source Code, Documentation, Tests, etc.
+
+    \item[Why?]\hfill\\ 
+    Peer review ensures that the quality of the content in the code-base, is of the wanted quality and doesn't differ from its specification. 
+    Finding errors earlier and correcting them is often an advantage as nothing else will depend on it. 
+    At the very least, the people in the peer review will have a better understanding of the project at hand.
+
+    \item[How?]\hfill\\
+    We use Scrum so the peer review is done when a story has been put in the review phase. 
+    As mentioned above, all content in the master branch of our Git repository has been confirmed by at least two people, often three. 
+    Typically the review is done my the peers by first examining all the changes and then discuss potential changes and address concern with the author. 
+\end{description}
+% chapter tools_techniques_and_practices (end)
